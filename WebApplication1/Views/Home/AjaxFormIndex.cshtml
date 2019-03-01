@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "AjaxFormIndex";
+}
+
+<h2>AjaxFormIndex</h2>
+@using (Ajax.BeginForm("getNancy", new AjaxOptions() {
+
+        HttpMethod = "POST",
+        UpdateTargetId = "sonuc",
+        InsertionMode = InsertionMode.Replace,
+        LoadingElementId = "yukleniyor",
+        LoadingElementDuration=300
+
+
+
+}))
+{
+<input type="text" id="personel" name="personel" placeholder="Personel Adini Giriniz" />
+<button type="submit" class="btn btn-success">Siparişleri Getir</button>
+
+}
+<div id="yukleniyor" class="alert alert-warning" style="display:none;"> Yukleniyor</div>
+<div id="sonuc"></div>
+

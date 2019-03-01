@@ -1,0 +1,23 @@
+﻿@using WebApplication1.Models
+@model List<Order_Details>
+<table class="table table-hover">
+    <tr>
+        <th>Product Name</th>
+        <th>Quantity</th>
+        <th>Unit Price</th>
+        <th>Discount</th>
+      <th>Customer Name</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td> @item.Products.ProductName </td>
+            <td>@item.Quantity</td>
+            <td>@item.UnitPrice</td>
+            <td>@item.Discount</td>
+            <td>@item.Orders.Customers.CompanyName</td>
+        </tr>
+
+    }
+
+</table>
